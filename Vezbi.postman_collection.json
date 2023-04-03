@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "bb6eff2e-b3b5-4317-bb66-37bbd01448ed",
+		"name": "Vezbi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25046648"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking?firstname=Jim&lastname=Brown&totalprice=111&depositpaid=true&checkin=2018-01-01&checkout=2019-01-01&additionalneeds=Breakfast",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "Jim"
+								},
+								{
+									"key": "lastname",
+									"value": "Brown"
+								},
+								{
+									"key": "totalprice",
+									"value": "111"
+								},
+								{
+									"key": "depositpaid",
+									"value": "true"
+								},
+								{
+									"key": "checkin",
+									"value": "2018-01-01"
+								},
+								{
+									"key": "checkout",
+									"value": "2019-01-01"
+								},
+								{
+									"key": "additionalneeds",
+									"value": "Breakfast"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shuffle cards",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1",
+					"protocol": "https",
+					"host": [
+						"www",
+						"deckofcardsapi",
+						"com"
+					],
+					"path": [
+						"api",
+						"deck",
+						"new",
+						"shuffle",
+						""
+					],
+					"query": [
+						{
+							"key": "deck_count",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dog Api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dog.ceo/api/breeds/image/random",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breeds",
+						"image",
+						"random"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
